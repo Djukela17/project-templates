@@ -1,0 +1,14 @@
+version: '3'
+services:
+  node-dev:
+    build: .
+    container_name: react-next-dev
+    working_dir: /usr/app
+    volumes:
+      - ./app:/usr/app
+      - node_modules:/usr/app/node_modules/
+    ports:
+      - 3000:3000
+    command: npm run dev
+volumes:
+  node_modules:
